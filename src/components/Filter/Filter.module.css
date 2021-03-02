@@ -1,0 +1,17 @@
+.filter__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.filter__title {
+  font-style: oblique;
+  font-size: medium;
+}
+
+.filter__input {
+  align-self: center;
+  margin-left: 10px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid green;
+}
