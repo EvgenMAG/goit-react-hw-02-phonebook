@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Filter.module.css';
+import ProtoTypes from 'prop-types';
 
 const Filter = ({ search, onChangeInput }) => {
   return (
@@ -13,6 +14,11 @@ const Filter = ({ search, onChangeInput }) => {
       />
     </div>
   );
+};
+
+Filter.protoTypes = {
+  search: ProtoTypes.string.isRequired,
+  onChangeInput: ProtoTypes.func.isRequired,
 };
 
 export default Filter;

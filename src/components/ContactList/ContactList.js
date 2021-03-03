@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './ContactList.module.css';
+import ProtoTypes from 'prop-types';
 
 const ContactList = ({ searchedName, cleanContactList }) => {
   return (
@@ -20,6 +21,15 @@ const ContactList = ({ searchedName, cleanContactList }) => {
       })}
     </ul>
   );
+};
+
+ContactList.protoTypes = {
+  searchedName: ProtoTypes.shape({
+    id: ProtoTypes.string.isRequired,
+    name: ProtoTypes.string.isRequired,
+    number: ProtoTypes.number.isRequired,
+  }),
+  cleanContactList: ProtoTypes.func.isRequired,
 };
 
 export default ContactList;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import s from './App.module.css';
-// import { v4 as idv4 } from 'uuid';
 import users from './contacts.json';
 import Filter from './components/Filter';
 import Form from './components/Form';
@@ -17,16 +16,14 @@ class App extends Component {
     const { contacts } = this.state;
     const newName = data.name.toLowerCase();
     const newPhone = data.number;
-    if (contacts.some(el => el.name.toLowerCase() === newName)) {
+    if (contacts.find(el => el.name.toLowerCase() === newName)) {
       return alert(`${newName} is already in contacts`);
     }
 
-    if (contacts.some(el => el.number.toLowerCase() === newPhone)) {
+    if (contacts.find(el => el.number.toLowerCase() === newPhone)) {
       return alert(`${newPhone} is already in contacts`);
     }
-    // console.log(data);
     const newContact = contacts.concat(data);
-    // console.log(newContact);
 
     this.setState(prevState => {
       return { ...prevState, contacts: newContact };
@@ -48,7 +45,7 @@ class App extends Component {
     const foundName = this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter),
     );
-    console.log(foundName);
+
     return (
       <div className={s.blocks}>
         <h1 className={s.title}>Phonebook</h1>

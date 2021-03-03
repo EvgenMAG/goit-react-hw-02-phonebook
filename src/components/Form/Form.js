@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import s from './Form.module.css';
 import { v4 as idv4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
   state = {
@@ -50,7 +51,7 @@ class Form extends Component {
           {' '}
           Number
           <input
-            type="number"
+            type="tel"
             name="number"
             className={s.form__input}
             placeholder="38-067-504-13-09"
@@ -66,5 +67,9 @@ class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default Form;

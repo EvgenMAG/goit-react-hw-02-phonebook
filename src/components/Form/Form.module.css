@@ -28,8 +28,10 @@
   color: tomato;
   cursor: pointer;
   outline: none;
+  transition: transform 300ms ease-in-out;
 }
 .form__button:hover {
   background-color: tomato;
   color: grey;
+  transform: scale(1.1);
 }
